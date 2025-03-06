@@ -1,9 +1,6 @@
 package com.shopsnap.shopsnap.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,5 +14,19 @@ public class Product {
 
     @Id
     @GeneratedValue()
-    private int id;
+    private int product_id;
+
+    @Column
+    String product_imageUrl;
+
+    @Column
+    String product_title;
+
+    @Column
+    String product_description;
+
+    @Column
+    int product_price;
+
+
 }

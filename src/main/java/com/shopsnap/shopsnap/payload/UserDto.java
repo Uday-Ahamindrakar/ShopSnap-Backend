@@ -18,18 +18,18 @@ import lombok.Setter;
 public class UserDto {
 
     @NotBlank(message = "Email cannot be blank")
-    String email;
+    private String email;
     @NotNull
     @NotBlank(message = "Name cannot be blank")
     @Size(min = 2, message = "Name must be at least 2 characters long")
-    String name;
+    private String name;
     @NotNull
     @NotBlank(message = "Mobile number cannot be blank")
-    String mobileNo;
+    private String mobileNo;
     @NotNull
     @NotBlank(message = "Password cannot be blank")
-    String password;
+    private String password;
     @NotNull
     @NotBlank(message = "Address cannot be blank")
-    String address;
+    private String address;
 }
