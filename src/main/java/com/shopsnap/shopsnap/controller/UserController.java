@@ -2,6 +2,7 @@ package com.shopsnap.shopsnap.controller;
 
 import com.shopsnap.shopsnap.payload.UserDto;
 import com.shopsnap.shopsnap.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,13 +20,13 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/")
-    public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto){
+    public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto){
         UserDto createUserDto = this.userService.createUser(userDto);
         return new ResponseEntity<>(createUserDto, HttpStatus.CREATED);
     }
 
     @PutMapping("/{email}")
-    public ResponseEntity<UserDto> updateUser(@RequestBody UserDto userDto, @PathVariable("email") String emailValue){
+    public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto, @PathVariable("email") String emailValue){
         UserDto updatedUser = this.userService.updateUser(userDto, emailValue);
         return ResponseEntity.ok(updatedUser);
     }

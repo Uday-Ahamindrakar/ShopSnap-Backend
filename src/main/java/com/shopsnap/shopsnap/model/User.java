@@ -16,14 +16,14 @@ import lombok.Setter;
 public class User {
 
     @Id
-    String email;
+    private String email;
     @Column(nullable = false)
-    String name;
+    private String name;
     @Column(nullable = false)
-    String mobileNo;
+    private String mobileNo;
     @Column(nullable = false)
-    String password;
+    private String password;
     @Column(nullable = false)
-    String address;
+    private String address;
 
 }
